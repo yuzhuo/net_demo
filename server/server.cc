@@ -61,8 +61,7 @@ int main()
     unsigned int addr_len = sizeof(peer_addr);
     printf(" ** addr_len: %d\n", addr_len);
 
-    while (1)
-    {
+    while (1) {
         if ((cfd = accept(sfd, (struct sockaddr *)&peer_addr, &addr_len)) == -1)
             handle_error("accept");
         printf(" ** addr_len: %d\n", addr_len);
@@ -77,8 +76,7 @@ int main()
         unsigned char buf[kBufLen + 1];
         printf("reading [%d]...\n", cfd);
 
-        while ((nread = read(cfd, buf, kBufLen)) > 0)
-        {
+        while ((nread = read(cfd, buf, kBufLen)) > 0) {
             printf("*** nread: %d\n", nread);
             for (int i = 0; i < nread; ++i)
                 printf("0x%x ", buf[i]);
